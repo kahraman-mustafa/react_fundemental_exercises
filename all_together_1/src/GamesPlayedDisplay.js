@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from "prop-types";
 
 const GamesPlayedDisplay = function(props) {
 
@@ -13,11 +12,5 @@ const GamesPlayedDisplay = function(props) {
         <div key="games-played-display">{buttonShowHide}</div>
     );
 }
-
-GamesPlayedDisplay.propTypes = {
-    isVisibleGamesPlayed: PropTypes.bool.isRequired,
-    handleChangeIsVisibleGamesPlayed: PropTypes.func.isRequired,
-    users: PropTypes.array.isRequired
-};
 
 export default GamesPlayedDisplay;
