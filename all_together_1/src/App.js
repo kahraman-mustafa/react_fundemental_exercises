@@ -41,6 +41,7 @@ class App extends Component {
         </header>
 
         <h2>Video Game Players Info</h2>
+
         {/* Tüm kullanıcılar içinde userName mevcut mu kontrol etmek için */}
         {/* Girilen kullanıcı bilgilerinin App.js içindeki state e aktarmak için callback*/}
         <AddUser 
@@ -48,9 +49,12 @@ class App extends Component {
           addUser={this.addUser}/> 
         
         <h2>Player List</h2>
+
         <GamesPlayedDisplay 
+          users={this.state.users}
           isVisibleGamesPlayed={this.state.isVisibleGamesPlayed} 
           handleChangeIsVisibleGamesPlayed={this.handleChangeIsVisibleGamesPlayed} />
+
         <UsersInfo 
           users={this.state.users} 
           isVisibleGamesPlayed={this.state.isVisibleGamesPlayed} />
