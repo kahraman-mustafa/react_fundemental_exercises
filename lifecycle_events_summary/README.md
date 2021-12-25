@@ -1,3 +1,26 @@
+# Lifecycle Events and Component vs PureComponent vs Stateless Function
+/* 
+  Basit bir PureComponent vs Stateless Function vs Component uygulaması 
+    - uygulamada state olarak toggle değişkeni tanımlanmıştır.
+    - componentDidMount() metodu ile DOM'a ilk mounttan sonra 
+      toggle state değişkeninin değeri her 1000 milisaniyede bir değişecek/değişmeyecek şekilde ayarlanır
+    - toggle state değişkeni, App componentinin alt componentleri için bir "props" değişkenidir
+    - Alt componentlerin ikisi Pure, biri Stateless, ikisi de normal Componenttir.
+    - toggle stateinin değerine bağlı olarak toggle propsunun her değişiminde/değişmeyişinde
+      alt componentlerin tekrar render() edip etmediği görülür
+    - Bunu anlamak için her alt component içinde {new Date().getSeconds().toString()} kod parçası bulunur
+      eğer tekrar render() edilmişse, saniye değeri ekranda güncellenmiş gözükür.
+  
+  Denemelerden anlaşıldığı kadarıyla;
+    - Pure Component, sadece state değişkenlerinin değeri değiştiğinde render() metodunu tekrar çağırır; 
+      state değeri değişmezse, render() çağrılmaz.
+      Props ile state değişkeni atamasının constructor() metodu dışında ya da içinde olması etkilemez.
+    - Stateless Functionlar, state içermez; her props değişiminde de re-render olur
+    - Normal Componentlerde; Props ile state değişkeni ataması varsa props değişmese bile her atamada state de tekrar atanır, 
+      render() metodu tekrar çağırılır.
+      Props ile state değişkeni atamasının constructor() metodu dışında ya da içinde olması etkilemez.
+*/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
